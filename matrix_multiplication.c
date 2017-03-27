@@ -78,7 +78,7 @@ void pararell_multiplication(double ** MULT, double ** M1, double ** M2,int m, i
 	//i(iterates in M1 as row), j(iterates in M2 as column)
 	int i, j = 0;
 	
-	//this parallel the nested fors with one thread for calculate each element in the final matrix
+	//this parallels the nested fors with one thread for calculate each element in the final matrix
 	#pragma omp parallel for num_threads(m*p) collapse(2) 
 	for (i = 0; i < m; ++i) //row nº i€[0,m)
 	{
@@ -87,7 +87,7 @@ void pararell_multiplication(double ** MULT, double ** M1, double ** M2,int m, i
 			addictionProduct(MULT,M1,M2,i,j,n);
 		}
 	}
-	//Print the matrix
+	//Prints the matrix
 	for (i = 0; i < m; ++i){
 		for (j = 0; j < p; ++j){
 			printf("%.2f ",MULT[i][j]);

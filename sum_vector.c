@@ -10,7 +10,7 @@
 
 //Headers
 void partialAddition(double * subvector, int subvector_size);
-double totalAddition(double * vector, int vector_size, int subvector_size);
+double totalAddition(double * vector, int subvector_size, int nTHREADS);
 double addition(double * vector, int vector_size, int nTHREADS);
 void initVector(double * vector, int size, double * no_parallel_sum);
 
@@ -23,19 +23,20 @@ int main ()
 
 	double no_parallel_sum , parallel_sum = 0.0;
 	double * vector;
-	vector_size = 102;
+	vector_size = 107;
 
-	nthreads = 4; //Sets here the number of threads
+	nthreads = 9; //Sets here the number of threads
 	nprocs = omp_get_num_procs();
 
 	vector = (double *) malloc(vector_size * sizeof(double));
-	initVector(vector,vector_size,&no_parallel_sum);
+	initVector(vector,vector_size, &no_parallel_sum);
 
+	
 	printf("Number of procs in use->[%d]\n",nprocs);
 	printf("Number of threads will be launch->[%d]\n",nthreads);
 	parallel_sum = addition(vector,vector_size,nthreads);
-	printf("No parallel->[%f], parallel->[%f]\n",no_parallel_sum,parallel_sum);
-
+	printf("No parallel->[%.4f], parallel->[%.4f]\n",no_parallel_sum,parallel_sum);
+	
 	return EXIT_SUCCESS;
 }
 
@@ -43,12 +44,13 @@ int main ()
 void initVector(double * vector, int size, double * no_parallel_sum){
 
 	int random, i = 0;
+	double accum = 0.0;
 	for (i=0; i<size; i++){
-		//random = rand()%5 + 1;
-		random = 1;
+		random = rand()%5 + 1;
 		vector[i] = random;
-		*no_parallel_sum += random;
+		accum = accum+random;
 	}
+	*no_parallel_sum = accum;
 	
 }
 //addition
@@ -67,12 +69,13 @@ void partialAddition(double * subvector, int subvector_size){
 }
 
 //Adds and returns the first element of each subvector.
-double totalAddition(double * vector, int vector_size, int subvector_size){
+double totalAddition(double * vector, int subvector_size, int nTHREADS){
 	int i;
 	double s=0;
 
-	for(i=0; i<vector_size; i+=subvector_size)
+	for(i=0; i<(subvector_size*nTHREADS); i+=subvector_size){
 		s+=vector[i];
+	}
 	return s;
 }
 
@@ -91,12 +94,14 @@ double addition(double * vector, int vector_size, int nTHREADS){
 	#pragma omp parallel for num_threads(nTHREADS) //parallels the for loop with nTHREADS threads
 	for (i=0; i<nTHREADS; i++){
 
-		if(i==(nTHREADS-1))
+		if(i==(nTHREADS-1)){
 			partialAddition(vector+(i*subvector_size),last_subvector_size);
-		else
+		}
+		else{
 			partialAddition(vector+(i*subvector_size),subvector_size);
+		}
 		printf("I'm thread nº %d, I process the section %d.\n", omp_get_thread_num(),i);	
 
 	}
-	return totalAddition(vector,vector_size,subvector_size);
+	return totalAddition(vector,subvector_size,nTHREADS);
 }
