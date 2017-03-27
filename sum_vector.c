@@ -76,6 +76,8 @@ double totalAddition(double * vector, int vector_size, int subvector_size){
 	return s;
 }
 
+//BUG -> if vector_size%nTHREADS !=0
+
 //Launch nTHREADS threads with nTHREADS subvector, each thread will compute one subvector.
 double addition(double * vector, int vector_size, int nTHREADS){
 	
@@ -86,7 +88,7 @@ double addition(double * vector, int vector_size, int nTHREADS){
 	if(DEBUG) printf("vector base pointer->[%p]\n",vector);
 	printf("subvector_size->%d last_subvector_size->%d\n",subvector_size,last_subvector_size);
 
-	#pragma omp parallel for //parallels the for loop
+	#pragma omp parallel for num_threads(nTHREADS) //parallels the for loop with nTHREADS threads
 	for (i=0; i<nTHREADS; i++){
 
 		if(i==(nTHREADS-1))
