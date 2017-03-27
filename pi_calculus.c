@@ -3,7 +3,7 @@
 #include <time.h>
 #include <stdlib.h>
 
-#define NUM_STEPS 2147483647 //MAX_INT
+#define NUM_STEPS 100000 //MAX_INT
 //pi calculus
 int main ()
 {
