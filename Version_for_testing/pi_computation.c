@@ -4,16 +4,16 @@
 #include <stdlib.h>
 #include <math.h>
 
-#define NUM_STEPS 100000 //MAX_INT
+#define NUM_STEPS 100000
 double current_time();
 
 //pi calculus
 int main ()
 {
-
+	printf("NUM_STEPS-> %d\n",NUM_STEPS);
 	int n_threads;
 	int NUM_MAX_THREADS = 16;
-	for (n_threads = 2; n_threads <= NUM_MAX_THREADS; n_threads =+ 2) //2 4 6 8 10 12 14 16
+	for (n_threads = 2; n_threads <= NUM_MAX_THREADS; n_threads += 2) //2 4 6 8 10 12 14 16
 	{
 		int i;
 		double x,sum,step,aux,pi;
@@ -23,9 +23,9 @@ int main ()
 		step = 1.0/(double) NUM_STEPS;
 
 		init_time = current_time();
-		#pragma omp parallel private(i,x,aux) shared(sum) num_threads(n_threads)
+		#pragma omp parallel num_threads(n_threads) private(i,x,aux) shared(sum)
 		{
-			#pragma omp for schedule(static) omp_nu
+			#pragma omp for schedule(static)
 			for(i=0; i<NUM_STEPS; i++){
 
 				x=(i+0.5)*step;
@@ -37,7 +37,7 @@ int main ()
 		}
 		pi=step*sum;
 		end_time = current_time();
-		printf("PI result->[%f], Error->[%f], Time->[%f], Num threads->[%d]\n",pi,fabs(PI25DT-pi),(end_time-init_time),n_threads);
+		printf("Num threads->[%d], %f \n",n_threads,(end_time-init_time));
 	}
 	return 0;
 }

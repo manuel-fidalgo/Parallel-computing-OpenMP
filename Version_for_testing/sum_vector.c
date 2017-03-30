@@ -18,18 +18,19 @@ void initVector(double * vector, int size, double * no_parallel_sum);
 //sum vector
 int main ()
 {
-
+	int vector_size = 10000000;
+	printf("VECTOR_SIZE-> %d\n",vector_size);
 	int n_threads;
 	int NUM_MAX_THREADS = 16;
-	for (n_threads = 2; n_threads <= NUM_MAX_THREADS; n_threads =+ 2) //2 4 6 8 10 12 14 16
+	for (n_threads = 2; n_threads <= NUM_MAX_THREADS; n_threads += 2) //2 4 6 8 10 12 14 16
 	{
 		srand(time(NULL));
 		double init_time, end_time = 0; 
-		int nthreads, tid, nprocs, vector_size, i;
+		int nthreads, tid, nprocs, i;
 
 		double no_parallel_sum , parallel_sum = 0.0;
 		double * vector;
-		vector_size = 100000000;
+		
 
 		vector = (double *) malloc(vector_size * sizeof(double));
 		initVector(vector,vector_size, &no_parallel_sum);
@@ -38,8 +39,7 @@ int main ()
 		parallel_sum = addition(vector,vector_size,n_threads);
 		end_time = current_time();
 
-		printf("Result->[%.4f], Time->[%f], Num threads->[%d]\n",
-			no_parallel_sum,parallel_sum,(end_time-init_time),n_threads);
+		printf("Num threads->[%d], %f \n",n_threads,(end_time-init_time));
 
 		free(vector);
 	}

@@ -8,19 +8,16 @@ void fillMatrix(double ** M, int rows, int cols);
 void linear_multiplication(double ** MULT,double ** M1, double ** M2,int m, int n, int p);
 void pararell_multiplication(double ** MULT, double ** M1, double ** M2,int m, int n, int p,int num_threads);
 double addictionProduct(double ** MULT, double ** M1, double ** M2, int i, int j, int n);
-/*
-struct timeval start, end;
-gettimeofday(&start, NULL);
-gettimeofday(&end, NULL);
-delta = ((end.tv_sec  - start.tv_sec) * 1000000u + end.tv_usec - start.tv_usec) / 1.e6;
-*/
+
 //matrix multiplication
 int main ()
 {
-
+	int m,n,p = 0;
+	m=1000;n=1000;p=1000; //1000x1000 matrix
+	printf("MATRIX_SIZE-> (%d*%d)\n",m,n);
 	int n_threads;
 	int NUM_MAX_THREADS = 16;
-	for (n_threads = 2; n_threads <= NUM_MAX_THREADS; n_threads =+2) //2 4 6 8 10 12 14 16
+	for (n_threads = 2; n_threads <= NUM_MAX_THREADS; n_threads +=2) //2 4 6 8 10 12 14 16
 	{
 
 		int i;
@@ -34,9 +31,6 @@ int main ()
 		double ** M1; //(m,n)
 		double ** M2; //(n,p)
 		double ** MULT;
-
-		int m,n,p = 0;
-		m=100;n=100;p=100; //1000x1000 matrix
 
 		M1 = (double **)malloc(m*sizeof(double *));
 		for (i = 0; i < m; ++i)
@@ -54,16 +48,17 @@ int main ()
 		fillMatrix(M1,m,n);
 		fillMatrix(M2,n,p);
 
-		int threads = 8;
-
 		init_time = current_time();
-		pararell_multiplication(MULT,M1,M2,m,n,p);
+		pararell_multiplication(MULT,M1,M2,m,n,p,n_threads);
 		end_time = current_time();
-		printf("Time->[%f], Num threads->[%d] \n",(end_time-init_time),threads);
+		printf("Num threads->[%d], %f \n",n_threads,(end_time-init_time));
+
+		//memory unallocation
+		for (i = 0; i < m; ++i){ free(M1[i]); free(M2[i]); free(MULT[i]); } 
 
 		free(M1);
 		free(M2);
-		free(M3);
+		free(MULT);
 
 	}
 	return 0;

@@ -1,0 +1,243 @@
+NUM_STEPS-> 100
+Num threads->[2], 0.000073 
+Num threads->[4], 0.000112 
+Num threads->[6], 0.000134 
+Num threads->[8], 0.000117 
+Num threads->[10], 0.000101 
+Num threads->[12], 0.000098 
+Num threads->[14], 0.000091 
+Num threads->[16], 0.000100 
+NUM_STEPS-> 100
+Num threads->[2], 0.000113 
+Num threads->[4], 0.000152 
+Num threads->[6], 0.000159 
+Num threads->[8], 0.000126 
+Num threads->[10], 0.000095 
+Num threads->[12], 0.000092 
+Num threads->[14], 0.000453 
+Num threads->[16], 0.000446 
+NUM_STEPS-> 100
+Num threads->[2], 0.000081 
+Num threads->[4], 0.000105 
+Num threads->[6], 0.000139 
+Num threads->[8], 0.000121 
+Num threads->[10], 0.000104 
+Num threads->[12], 0.000091 
+Num threads->[14], 0.000098 
+Num threads->[16], 0.000104 
+NUM_STEPS-> 1000
+Num threads->[2], 0.000387 
+Num threads->[4], 0.000505 
+Num threads->[6], 0.000680 
+Num threads->[8], 0.000763 
+Num threads->[10], 0.000639 
+Num threads->[12], 0.000582 
+Num threads->[14], 0.000552 
+Num threads->[16], 0.000484 
+NUM_STEPS-> 1000
+Num threads->[2], 0.000114 
+Num threads->[4], 0.000419 
+Num threads->[6], 0.000684 
+Num threads->[8], 0.000772 
+Num threads->[10], 0.000624 
+Num threads->[12], 0.000614 
+Num threads->[14], 0.000582 
+Num threads->[16], 0.000604 
+NUM_STEPS-> 1000
+Num threads->[2], 0.000141 
+Num threads->[4], 0.000511 
+Num threads->[6], 0.000649 
+Num threads->[8], 0.000758 
+Num threads->[10], 0.000528 
+Num threads->[12], 0.000628 
+Num threads->[14], 0.000541 
+Num threads->[16], 0.000439 
+NUM_STEPS-> 100000
+Num threads->[2], 0.020326 
+Num threads->[4], 0.045316 
+Num threads->[6], 0.064638 
+Num threads->[8], 0.074893 
+Num threads->[10], 0.064282 
+Num threads->[12], 0.056586 
+Num threads->[14], 0.051821 
+Num threads->[16], 0.049359 
+NUM_STEPS-> 100000
+Num threads->[2], 0.020289 
+Num threads->[4], 0.046093 
+Num threads->[6], 0.064205 
+Num threads->[8], 0.075463 
+Num threads->[10], 0.065613 
+Num threads->[12], 0.056695 
+Num threads->[14], 0.053902 
+Num threads->[16], 0.050274 
+NUM_STEPS-> 100000
+Num threads->[2], 0.020431 
+Num threads->[4], 0.041215 
+Num threads->[6], 0.062984 
+Num threads->[8], 0.074808 
+Num threads->[10], 0.062571 
+Num threads->[12], 0.055639 
+Num threads->[14], 0.051594 
+Num threads->[16], 0.048278 
+VECTOR_SIZE-> 100
+Num threads->[2], 0.000066 
+Num threads->[4], 0.000082 
+Num threads->[6], 0.000059 
+Num threads->[8], 0.000046 
+Num threads->[10], 0.000036 
+Num threads->[12], 0.000038 
+Num threads->[14], 0.000040 
+Num threads->[16], 0.000040 
+VECTOR_SIZE-> 100
+Num threads->[2], 0.000062 
+Num threads->[4], 0.000065 
+Num threads->[6], 0.000065 
+Num threads->[8], 0.000046 
+Num threads->[10], 0.000038 
+Num threads->[12], 0.000036 
+Num threads->[14], 0.000041 
+Num threads->[16], 0.000039 
+VECTOR_SIZE-> 100
+Num threads->[2], 0.000050 
+Num threads->[4], 0.000057 
+Num threads->[6], 0.000068 
+Num threads->[8], 0.000059 
+Num threads->[10], 0.000045 
+Num threads->[12], 0.000038 
+Num threads->[14], 0.000046 
+Num threads->[16], 0.000040 
+VECTOR_SIZE-> 10000
+Num threads->[2], 0.000068 
+Num threads->[4], 0.000057 
+Num threads->[6], 0.000068 
+Num threads->[8], 0.000056 
+Num threads->[10], 0.000041 
+Num threads->[12], 0.000047 
+Num threads->[14], 0.000070 
+Num threads->[16], 0.000053 
+VECTOR_SIZE-> 10000
+Num threads->[2], 0.000077 
+Num threads->[4], 0.000074 
+Num threads->[6], 0.000070 
+Num threads->[8], 0.000056 
+Num threads->[10], 0.000043 
+Num threads->[12], 0.000050 
+Num threads->[14], 0.000048 
+Num threads->[16], 0.000052 
+VECTOR_SIZE-> 10000
+Num threads->[2], 0.000067 
+Num threads->[4], 0.000063 
+Num threads->[6], 0.000081 
+Num threads->[8], 0.000057 
+Num threads->[10], 0.000043 
+Num threads->[12], 0.000047 
+Num threads->[14], 0.000052 
+Num threads->[16], 0.000049 
+VECTOR_SIZE-> 10000000
+Num threads->[2], 0.009346 
+Num threads->[4], 0.010454 
+Num threads->[6], 0.009824 
+Num threads->[8], 0.009265 
+Num threads->[10], 0.008987 
+Num threads->[12], 0.009319 
+Num threads->[14], 0.013624 
+Num threads->[16], 0.012303 
+VECTOR_SIZE-> 10000000
+Num threads->[2], 0.009559 
+Num threads->[4], 0.010287 
+Num threads->[6], 0.011286 
+Num threads->[8], 0.009343 
+Num threads->[10], 0.008991 
+Num threads->[12], 0.009469 
+Num threads->[14], 0.012528 
+Num threads->[16], 0.011929 
+VECTOR_SIZE-> 10000000
+Num threads->[2], 0.011670 
+Num threads->[4], 0.011746 
+Num threads->[6], 0.011847 
+Num threads->[8], 0.011891 
+Num threads->[10], 0.011893 
+Num threads->[12], 0.011850 
+Num threads->[14], 0.011702 
+Num threads->[16], 0.011239 
+MATRIX_SIZE-> (100*100)
+Num threads->[2], 0.000586 
+Num threads->[4], 0.000276 
+Num threads->[6], 0.000233 
+Num threads->[8], 0.000184 
+Num threads->[10], 0.000184 
+Num threads->[12], 0.000180 
+Num threads->[14], 0.000169 
+Num threads->[16], 0.000152 
+MATRIX_SIZE-> (100*100)
+Num threads->[2], 0.000501 
+Num threads->[4], 0.000314 
+Num threads->[6], 0.000234 
+Num threads->[8], 0.000185 
+Num threads->[10], 0.000193 
+Num threads->[12], 0.000184 
+Num threads->[14], 0.000164 
+Num threads->[16], 0.000158 
+MATRIX_SIZE-> (100*100)
+Num threads->[2], 0.000481 
+Num threads->[4], 0.000309 
+Num threads->[6], 0.000235 
+Num threads->[8], 0.000185 
+Num threads->[10], 0.000189 
+Num threads->[12], 0.000181 
+Num threads->[14], 0.000168 
+Num threads->[16], 0.000150 
+MATRIX_SIZE-> (500*500)
+Num threads->[2], 0.069555 
+Num threads->[4], 0.037733 
+Num threads->[6], 0.025940 
+Num threads->[8], 0.019748 
+Num threads->[10], 0.027278 
+Num threads->[12], 0.024825 
+Num threads->[14], 0.021310 
+Num threads->[16], 0.018676 
+MATRIX_SIZE-> (500*500)
+Num threads->[2], 0.068992 
+Num threads->[4], 0.037760 
+Num threads->[6], 0.025943 
+Num threads->[8], 0.019659 
+Num threads->[10], 0.026930 
+Num threads->[12], 0.023947 
+Num threads->[14], 0.020631 
+Num threads->[16], 0.017171 
+MATRIX_SIZE-> (500*500)
+Num threads->[2], 0.069150 
+Num threads->[4], 0.036830 
+Num threads->[6], 0.025958 
+Num threads->[8], 0.019748 
+Num threads->[10], 0.026484 
+Num threads->[12], 0.024309 
+Num threads->[14], 0.021009 
+Num threads->[16], 0.018426 
+MATRIX_SIZE-> (1000*1000)
+Num threads->[2], 1.642411 
+Num threads->[4], 0.831347 
+Num threads->[6], 0.564440 
+Num threads->[8], 0.419591 
+Num threads->[10], 0.758738 
+Num threads->[12], 1.200095 
+Num threads->[14], 1.053356 
+Num threads->[16], 0.924568 
+MATRIX_SIZE-> (1000*1000)
+Num threads->[2], 1.629706 
+Num threads->[4], 0.824219 
+Num threads->[6], 0.563561 
+Num threads->[8], 0.421001 
+Num threads->[10], 0.917972 
+Num threads->[12], 0.899525 
+Num threads->[14], 1.036336 
+Num threads->[16], 0.924859 
+MATRIX_SIZE-> (1000*1000)
+Num threads->[2], 1.614216 
+Num threads->[4], 0.819130 
+Num threads->[6], 0.557706 
+Num threads->[8], 0.420016 
+Num threads->[10], 0.995684 
+Num threads->[12], 0.907160 
+Num threads->[14], 1.043855 
+Num threads->[16], 0.945157 
